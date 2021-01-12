@@ -1,0 +1,4 @@
+%h3.general-subtitle= t('checkout.confirmation.shipments')
+%p.general-address
+  = cart.delivery_method.name
+  = link_to t('checkout.confirmation.edit'), checkout_path(state: :shipment), class: 'general-edit' if cart.confirmation?

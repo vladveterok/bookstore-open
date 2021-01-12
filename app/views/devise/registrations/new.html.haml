@@ -1,0 +1,16 @@
+%main.container.general-main-wrap
+  .text-center
+    %h3.general-login-title= t('session.sign_up')
+    = link_to user_facebook_omniauth_authorize_path, class: 'general-login-icon' do
+      %i.fab.fa-facebook-square
+    %p.general-login-text= t('session.or')
+  %div.general-form
+    = simple_form_for resource, as: resource_name, url: registration_path(resource_name), validate: true do |f|
+      = f.input :email
+      = f.input :password
+      = f.input :password_confirmation
+      .text-center
+        = f.button :submit, t('session.sign_up')
+  %p.general-sign-text.text-center
+    = t('session.have_acc')
+    = link_to t('session.sign_in'), new_user_session_path, class: 'in-gold-500'

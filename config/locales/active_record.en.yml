@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: format is so wrong, mate. :(
+            password:
+              invalid: is wrong. :( Gimme at least 1 upper, 1 lower, and 1 number, alrighty?
+              too_short: is too shorty, mate! Make it 8 at least!
+            password_confirmation:
+              confirmation: You have a short memory, mate, don'tya?
+        review:
+          attributes:
+            title:
+              invalid: Title can't be blank :(
+            body:
+              invalid: Review can't be blank :(
+            rate:
+               invalid: Book rate is invalid

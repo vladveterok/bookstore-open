@@ -1,0 +1,29 @@
+%main.container.general-main-wrap
+  - if @cart&.line_items&.any?
+    %h1.general-title-margin= t('cart.headers.cart')
+    .visible-xs
+      = render partial: 'carts/show/mobile_item', collection: LineItemDecorator.decorate(@cart.line_items.with_book)
+    .hidden-xs
+      %table.table.table-hover
+        %tr.no-hover
+          %th.col-pic.pl-0
+            %span.in-grey-600= t('cart.headers.product')
+          %th.col-title
+          %th.col-price
+            %span.in-grey-600= t('cart.headers.price')
+          %th.col-quantity
+            %span.in-grey-600= t('cart.headers.quantity')
+          %th.col-total
+            %span.in-grey-600= t('cart.headers.subtotal')
+          %th.col-close
+        = render partial: 'carts/show/item', collection: LineItemDecorator.decorate(@cart.line_items.with_book)
+    = render partial: 'carts/show/order', locals: { cart: CartDecorator.decorate(@cart) }
+    = link_to t('cart.headers.checkout'), checkout_path, class: 'btn btn-default mb-20 hidden-xs center-block'
+    = button_to t('cart.headers.checkout'), checkout_path, class: 'btn btn-default mb-20 visible-xs-inline-block'
+  - else
+    %div.mb-30
+    %h1.text-center
+      = t('cart.empty')
+    %br
+    = link_to t('cart.back_to_store'), root_path, class: 'btn btn-default mb-20 hidden-xs center-block'
+    = link_to t('cart.back_to_store'), root_path, class: 'btn btn-default mb-20 visible-xs-inline-block'

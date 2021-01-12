@@ -1,0 +1,6 @@
+%h3.general-subtitle= t('checkout.confirmation.payment_info')
+%p.general-address
+  = t('checkout.confirmation.last_numbers', last_numbers: bank_card.last_numbers)
+  = link_to t('checkout.confirmation.edit'), checkout_path(state: :payment), class: 'general-edit' if cart.confirmation?
+  %br
+  = bank_card.expiration_date

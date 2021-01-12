@@ -1,0 +1,15 @@
+.mb-80
+  %h3= t('show.review.write')
+  = simple_form_for Review.new, url: book_review_path(book), validate: true, remote: true, method: :post do |f|
+    %p.general-info-text= t('show.review.score')
+    .mb-15
+      #star-score
+    .row
+      .col-md-8
+        .mb-40
+          = f.hidden_field :book_id, value: book.id
+          = f.hidden_field :user_id, value: current_user.id
+          = f.input :title, label_html: { class: 'control-label input-label in-grey-600' }
+          = f.input :body, as: :text, label_html: { class: 'control-label input-label in-grey-600' }
+          .text-right
+            = f.button :submit, t('show.review.post_btn')

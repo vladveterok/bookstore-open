@@ -1,0 +1,6 @@
+.registration
+  %p.mb-5= t('checkout.login.quick_register')
+  %p.general-info-text.font-12.mb-20= t('checkout.login.password_later')
+  = simple_form_for(resource, url: checkout_sign_up_path, validate: true, remote: true, method: :post) do |f|
+    = f.input :email
+    = f.button :submit

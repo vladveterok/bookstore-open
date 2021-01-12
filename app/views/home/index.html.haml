@@ -1,0 +1,8 @@
+= render partial: 'home/index/latest_books', object: @latest_books
+.container
+  .jumbotron.text-center.mb-0
+    %h2.h1= t('home.welcome')
+    .mb-res-50
+      %p= t('home.about')
+    %button.btn.btn-default= t('home.get_started_btn')
+  = render partial: 'home/index/best_sellers', object: @best_sellers

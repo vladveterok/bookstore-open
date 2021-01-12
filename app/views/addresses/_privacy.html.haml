@@ -1,0 +1,16 @@
+#privacy.tab-pane.fade{role: "tabpanel"}
+  .row.mb-60
+    .col-sm-5
+      %p.in-gold-500.font-18.mb-25= t('session.edit.privacy.email')
+      = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: 'email_form' } do |f|
+        = f.input :email, autocomplete: 'email'
+        = f.button :submit
+    .col-sm-5.col-sm-offset-1
+      %p.in-gold-500.font-18.mb-25= t('session.edit.privacy.password')
+      .general-form-md.divider-lg-bottom.pb-25
+      = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: 'password_form' } do |f|
+        = f.input :current_password
+        = f.input :password
+        = f.input :password_confirmation
+        = f.button :submit
+    = render partial: 'addresses/remove_my_acc'

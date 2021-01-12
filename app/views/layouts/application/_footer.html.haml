@@ -1,0 +1,30 @@
+%footer.navbar-inverse
+  .container
+    .row
+      .col-sm-9
+        %ul.list-inline.general-align.mb-25
+          %li
+            = link_to t('header.home'), root_path, class: 'nav-link'
+          %li
+            = link_to t('header.shop'), books_path, class: 'nav-link'
+          -if user_signed_in?
+            %li
+              = link_to t('footer.orders'), orders_path, class: 'nav-link'
+            %li
+              = link_to t('footer.settings'), edit_user_registration_path, class: 'nav-link'
+      .col-sm-3
+        %p.general-nav-mail= t('footer.email')
+        %p.general-nav-number= t('footer.phone')
+        %ul.list-inline.general-align
+          %li
+            %a.nav-link{href: "#"}
+              %i.fab.fa-facebook{'aria-hidden': "true"}
+          %li
+            %a.nav-link{href: "#"}
+              %i.fab.fa-twitter{'aria-hidden': "true"}
+          %li
+            %a.nav-link{href: "#"}
+              %i.fab.fa-google-plus{'aria-hidden': "true"}
+          %li
+            %a.nav-link{href: "#"}
+              %i.fab.fa-instagram{'aria-hidden': "true"}

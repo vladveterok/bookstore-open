@@ -1,0 +1,22 @@
+%p.in-gold-500.font-18= t('checkout.summary')
+%table.general-summary-table.general-summary-table-right.general-text-right
+  %tr
+    %td
+      %p.font-16= t('checkout.order_summary.subtotal')
+    %td
+      %p.font-16= number_to_currency(cart.ordered_subtotal)
+  %tr
+    %td
+      %p.font-16= t('checkout.order_summary.coupon')
+    %td
+      %p.font-16= number_to_currency(cart.ordered_discount)
+  %tr
+    %td
+      %p.font-16= t('checkout.order_summary.shipping')
+    %td
+      %p.font-16= number_to_currency(cart.delivery_cost)
+  %tr
+    %td
+      %strong.font-18= t('checkout.order_summary.total')
+    %td
+      %strong.font-18= number_to_currency(cart.ordered_total)

@@ -1,0 +1,23 @@
+%h3.general-subtitle= t('checkout.payment.credit_card')
+= simple_form_for cart, url: checkout_path, method: :put, validate: true, html: { class: 'max-600 mb-80' } do |f|
+  =f.simple_fields_for :bank_card, cart.bank_card, validate: true do |fa|
+    = fa.input :number, autocomplete: 'number'
+    .row
+      .col-sm-6
+        = fa.input :name, autocomplete: 'name'
+      .col-sm-3
+        = fa.input :expiration_date, autocomplete: 'expiration_date'
+      .col-sm-3
+        = fa.input :cvv
+        %span.cvv-hint
+          %i.fa.fa-question-circle.general-form-help.mr-10
+            %span.cvv-hint-text.hidden-xs
+              = t('checkout.payment.cvv_hint')
+          %span.cvv-hint-text.visible-xs.xs-hint
+            = t('checkout.payment.cvv_hint')
+  = render partial: 'checkouts/show/order_summary', locals: { cart: cart }
+  .text-center
+    .visible-xs.visible-sm
+      = f.button :submit, t('checkout.save_continue'), class: 'center-block mb-80'
+    .hidden-xs.hidden-sm
+      = f.button :submit, t('checkout.save_continue'), class: 'center-page mb-80'

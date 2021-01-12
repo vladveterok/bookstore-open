@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: true
+  commands:
+    audit:
+      run: brakeman --no-pager
+      run: bundle-audit check --ignore CVE-2015-9284
+      run: bundle exec database_consistency
+    # Back-end linters
+    rubocop:
+      glob: "*.rb"
+      run: bundle exec rubocop --force-exclusion {staged_files} --parallel
+    fasterer:
+      glob: "*.rb"
+      run: bundle exec fasterer

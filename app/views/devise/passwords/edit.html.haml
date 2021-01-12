@@ -1,0 +1,9 @@
+%main.container.general-main-wrap
+  .text-center
+    %h3.general-login-title= t('session.new_pass')
+  %div.general-form
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+      = f.hidden_field :reset_password_token
+      = f.input :password
+      = f.input :password_confirmation
+      = f.button :submit, t('session.change_pass_btn')

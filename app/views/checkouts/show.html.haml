@@ -1,0 +1,6 @@
+- if user_signed_in?
+  %main.container
+    = render partial: 'checkouts/show/steps', locals: { cart: @cart }
+    = render partial: "checkouts/show/#{@state}", locals: { cart: CartDecorator.decorate(@cart) }
+- else
+  = render partial: 'checkouts/show/login'

@@ -1,0 +1,11 @@
+%p.general-address
+  = t('checkout.address.full_name', first_name: address.first_name, last_name: address.last_name)
+  = link_to t('checkout.confirmation.edit'), checkout_path(state: :address), class: 'general-edit' if cart.confirmation?
+  %br
+  = address.address
+  %br
+  = t('checkout.address.city_with_zip', city: address.city, zip: address.zip)
+  %br
+  = address.country
+  %br
+  = address.phone

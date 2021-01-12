@@ -1,0 +1,26 @@
+.general-order-wrap
+  .row
+    .col-sm-4
+      = simple_form_for :coupon, url: coupon_path, method: :put do |f|
+        = f.input :code
+        %div
+          = f.button :submit, class: 'btn btn-primary mr-5 mb-15 mt-15'
+    .col-sm-8
+      .res-mr-200.text-center.general-text-right
+        %p.in-gold-500.font-18= t('cart.headers.order_summary')
+        %table.general-summary-table.general-summary-table-right.general-text-right
+          %tr
+            %td
+              %p.font-16= t('cart.headers.subtotal_colon')
+            %td
+              %p.font-16= number_to_currency(cart.subtotal)
+          %tr
+            %td
+              %p.font-16= t('cart.headers.coupon')
+            %td
+              %p.font-16= number_to_currency(cart.discount)
+          %tr
+            %td
+              %strong.font-18= t('cart.headers.order_total')
+            %td
+              %strong.font-18= number_to_currency(cart.total)

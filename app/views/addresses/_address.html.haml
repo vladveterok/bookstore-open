@@ -1,0 +1,4 @@
+= simple_form_for address, as: :address, validate: true, remote: true, url: address_path, method: address.persisted? ? :put : :post, html: { id: "#{type}" } do |f|
+  %h3.general-subtitle.mt-00= t("session.edit.address.#{type.downcase}")
+  = render partial: 'addresses/address_fields', locals: { f: f, type: type }
+  = f.button :submit

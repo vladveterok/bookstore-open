@@ -1,0 +1,22 @@
+%h3.general-subtitle= t('checkout.delivery.delivery')
+.visible-xs
+  = simple_form_for checkout_path, method: :put do |f|
+    = render partial: 'checkouts/show/delivery/mobile_delivery_form', collection: DeliveryMethod.all
+    .text-center
+      = f.button :submit, t('checkout.save_continue')
+.hidden-xs.mb-res-50
+  = simple_form_for checkout_path, method: :put do |f|
+    %table.table.table-hover
+      %thead
+        %tr
+          %th.col-method
+            %span.in-grey-600.ml-40= t('checkout.delivery.method')
+          %th
+            %span.in-grey-600= t('checkout.delivery.days')
+          %th
+            %span.in-grey-600= t('checkout.delivery.price')
+      %tbody
+        = render partial: 'checkouts/show/delivery/delivery_form', collection: DeliveryMethod.all
+    = render partial: 'checkouts/show/order_summary', locals: { cart: cart }
+    .text-center
+      = f.button :submit, t('checkout.save_continue')

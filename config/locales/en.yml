@@ -1,0 +1,216 @@
+en:
+  time:
+    formats:
+      order_date: "%B %d, %Y"
+  number:
+    currency:
+      format:
+        delimiter: ','
+        format: "%u%n"
+        precision: 2
+        separator: '.'
+        unit: €
+  account:
+    log_out: Log out
+  header:
+    title: Bookstore
+    home: Home
+    shop: Shop
+    my_account: My account
+    order: Order
+    settings: Settings
+    log_out: Log out
+    sign_in: Sign in
+    sign_up: Sign up
+    zero_items: 0
+  shop:
+    mobile_dev: Mobile development
+    photo: Photo
+    web_design: Web design
+  footer:
+    orders: Orders
+    settings: Settings
+    phone: (555)-555-5555
+    email: support@bookstore.com
+  home:
+    welcome:  Welcome to our amazing Bookstore!
+    about: We pore through hundreds of new books each month and select the five best we can find to share with our members.
+    get_started_btn: Get Started
+  home_slider:
+    buy_now_btn: Buy Now
+    previous:  Previous
+    next:  Next
+  home_best_sellers:
+    title: Best Sellers
+  catalog:
+    header: Сatalog
+    view_more_btn: View More
+    filter:
+      header: Filter by category
+      all_books: All
+    sorting_header: Sort by
+    sorting:
+      newest: Newest first
+      popular: Popular first
+      price_lowtohight: 'Price: Low to hight'
+      price_highttolow: 'Price: Hight to low'
+      az: 'Title: A - Z'
+      za: 'Title: Z – A'
+  show:
+    back_to_results: Back to results
+    add_to_cart: Add to Cart
+    publication_year: Year of publication
+    dimensions:
+      header: Dimensions
+      dimensions: "H:%{height} x W:%{width} x D:%{depth}"
+    materials: Materials
+    description:
+      header: Description
+      more: Read More
+    review:
+      write: Write a Review
+      score: Score
+      title: Title
+      body: Review
+      post_btn: Post
+      reviews_count: "Reviews (%{amount})"
+      verified: Verified Reviewer
+      created: Thanks for Review! It will be published as soon as Admin will approve it. :)
+  session:
+    sign_in: Log In
+    sign_in_btn: Back to Store
+    sign_up: Sign Up
+    or: or
+    cancel: Cancel
+    forgot_pass_header: Forgot your password?
+    forgot_pass: Forgot password?
+    change_pass_btn: Change
+    we_deliver_pass: We'll email you instructions on how to reset it
+    email_instructions_btn: Email Instructions
+    remember_me: Remember me
+    dont_have_acc: Don’t have an Account?
+    have_acc: Have an Account?
+    edit:
+      settings: Settings
+      address_link: Address
+      privacy_link: Privacy
+      address:
+        billingaddress: Billing Address
+        shippingaddress: Shipping Address
+        remove_acc: Remove account
+        remove_acc_btn: Remove my account
+        remove_confirm:  I understand that all data will be lost
+      privacy:
+        email: Email
+        password: Password
+  mailer:
+    hello: "Hello %{email}!"
+    confirmation:
+      welcome: "Welcome %{email}!"
+      body: 'You can confirm your account email through the link below:'
+      confirm_acc: 'Confirm my account'
+    unconfirmed_email_changed: "We're contacting you to notify you that your email is being changed to %{email}."
+    email_changed: "We're contacting you to notify you that your email has been changed to %{email}."
+    password_changed: We're contacting you to notify you that your password has been changed.
+    reset_password:
+      info: Someone has requested a link to change your password. You can do this through the link below.
+      change_my_pass: Change my password
+      ignore_email: "If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one."
+  cart:
+    empty: Your cart is as empty as your eyes, turn around :(
+    canceled: Your order was canceled, your bank accounts are frozen, police and interpol are on their way
+    back_to_store: Back to Store
+    headers:
+      cart: Cart
+      product: Product
+      price: Price
+      quantity: Quantity
+      subtotal: Subtotal
+      subtotal_colon: 'Subtotal:'
+      enter_coupon: Enter Your Coupon Code
+      apply_coupon: Apply Coupon
+      order_summary: Order Summary
+      coupon: 'Coupon:'
+      order_total: Order Total
+      checkout: Checkout
+    coupon:
+      applied: Wooooow! You've got yourself a coupon! Let me just take a look at... yeah, it's good to go!
+      not_applied: ooops, something went wrong, cops are on their way.
+    notices:
+      add_book: Yay! Buy more books! Buy more books! Buy more books!
+      remove_book: Nooooo, you removed a book but we want your money!!1 Put it back! PUT IT BACK!
+  checkout:
+    steps:
+      checkout: Checkout
+      address: Address
+      shipment: Delivery
+      payment: Payment
+      confirmation: Confirm
+      completion: Complete
+    address:
+      billing: Billing Address
+      shipping: Shipping Address
+      full_name: "%{first_name} %{last_name}"
+      city_with_zip: "%{city} %{zip}"
+    login:
+      returning_customer: Returning Customer
+      new_customer: New Customer
+      quick_register: Quick Register
+      password_later: You’ll be able to create password later
+      with_password: Log In with Password
+      invalid_user: Looks like you don't exist
+      valid_user: Hi! So glad you're here and spending some money!^^
+      user_already_exists: You can't create an account that exists already, silly
+    delivery:
+      delivery: Delivery
+      time: "%{days_min} to %{days_max} days"
+      method: Method
+      days: Days
+      price: Price
+    payment:
+      credit_card: Credit Card
+      cvv_hint: 3-digit security code, usually found on the back of your card. American Express cards has 4-digit code, located on the front.
+    confirmation:
+      shipments: Shipments
+      payment_info: Payment Information
+      edit: edit
+      last_numbers: "** ** ** %{last_numbers}"
+      price: Price
+      quantity: Quantity
+      subtotal: Subtotal
+      total: Total
+      book: Book
+      place_order: Place Order
+    completion:
+      thanks: Thank You for your Order!
+      confirmation: An order confirmation has been sent to %{email}
+      order: Order %{number}
+      back_to_store: Back to Store
+    mailer:
+      subject: "Order %{number} created successfuly!"
+      hello: Hi there!
+      complete_order: Thanks for your order, your delivery is almost there! Let's just sneak a peek at what you've ordered.
+      order_number: Number of order
+      book: Book
+      price: Price
+      amount: Quantity
+      subtotal: Subtotal
+      summary: Order Summary
+      coupon: Coupon
+      delivery: Shipping
+      total: Total
+    save_continue: Save and Continue
+  orders:
+    all: All
+    my_orders: My Orders
+    sort_by: Sort by
+    number: Number
+    comleted_at: Completed at
+    not_completed: In process
+    status: Status
+    total: Total
+    states:
+      queue: Queue
+      delivery: Delivery
+      delivered: Delivered
+      canceled: Canceled

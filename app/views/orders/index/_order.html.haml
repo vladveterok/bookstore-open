@@ -1,0 +1,11 @@
+= link_to order_path(order) do
+  %table.table.table-hover
+    %tr
+      %td
+        %span.general-order-number= t('checkout.completion.order', number: order.order_number )
+      %td
+        %span.in-grey-900.font-16.fw-300=order.complete_date
+      %td
+        %span.font-16.in-grey-900.fw-300= order.aasm_state.humanize
+      %td
+        %strong.font-16.in-grey-900= number_to_currency(order.total_with_delivery)

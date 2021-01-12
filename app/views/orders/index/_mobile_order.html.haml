@@ -1,0 +1,23 @@
+.general-cart-item.divider-lg-bottom.pt-0
+  = link_to order_path(mobile_order) do
+    %table.table
+      %tr
+        %td.col-half
+          %span.in-grey-600= t('orders.number')
+        %td.col-half
+          %span.general-order-number= t('checkout.completion.order', number: mobile_order.order_number )
+      %tr
+        %td
+          %span.in-grey-600= t('orders.completed_at')
+        %td
+          %span.in-grey-900.font-16.fw-300 2016-11-14
+      %tr
+        %td
+          %span.in-grey-600= t('orders.status')
+        %td
+          %span.font-16.in-grey-900.fw-300= mobile_order.aasm_state.humanize
+      %tr
+        %td
+          %span.in-grey-600= t('orders.total')
+        %td
+          %strong.font-16= number_to_currency(mobile_order.total_with_delivery)

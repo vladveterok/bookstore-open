@@ -1,0 +1,6 @@
+#address.tab-pane.fade.in.active{role: "tabpanel"}
+  .row
+    .col-md-5.mb-40
+      = render partial: 'addresses/address', locals: { address: current_user.billing_address ? current_user.billing_address : Address.new, type: 'BillingAddress' }
+    .col-md-5.col-md-offset-1.mb-25
+      = render partial: 'addresses/address', locals: { address: current_user.shipping_address ? current_user.shipping_address : Address.new, type: 'ShippingAddress' }

@@ -1,0 +1,37 @@
+require: 
+  - rubocop-rspec
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  Exclude:
+      - 'db/**/*'
+      - '.git/**/*'
+      - 'test_dir/*'
+      - 'config/environments/*'
+      - 'bin/*'
+      - 'config/**/*'
+      - 'node_modules/**/**/**/*'
+      - vendor/bundle/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Gemfile'
+    - 'spec/**/*.rb'
+    - 'app/admin/*'
+
+Layout/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 6
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 6

@@ -1,0 +1,32 @@
+%main.container.general-main-wrap
+  %h1.general-title-margin= @order.order_number
+  .row.mb-20
+    .col-sm-3
+      %h3.general-subtitle= t('checkout.address.shipping')
+      = render partial: 'checkouts/show/confirmation/address', locals: { address: @order.user.shipping_address, cart: @order }
+    .col-sm-3
+      %h3.general-subtitle= t('checkout.address.billing')
+      = render partial: 'checkouts/show/confirmation/address', locals: { address: @order.user.billing_address, cart: @order }
+    .col-sm-3
+      = render partial: 'checkouts/show/confirmation/shipments', locals: { cart: @order }
+    .col-sm-3
+      = render partial: 'checkouts/show/confirmation/payment', locals: { cart: @order, bank_card: BankCardDecorator.decorate(@order.bank_card) }
+  .visible-xs
+    = render partial: 'checkouts/show/confirmation/mobile_item', collection: LineItemDecorator.decorate(@order.line_items.with_book)
+  .hidden-xs.divider-lg.pt-20
+    %table.table.table-hover
+      %thead
+        %tr
+          %th
+            %span.in-grey-600= t('checkout.confirmation.book')
+          %th.col-method
+          %th
+            %span.in-grey-600= t('checkout.confirmation.price')
+          %th
+            %span.in-grey-600= t('checkout.confirmation.quantity')
+          %th
+            %span.in-grey-600= t('checkout.confirmation.total')
+      %tbody
+        = render partial: 'checkouts/show/confirmation/item', collection: LineItemDecorator.decorate(@order.line_items.with_book)
+  .text-center.general-text-right
+    = render partial: 'orders/show/order_summary', locals: { cart: @order }

@@ -1,0 +1,13 @@
+.general-message-wrap.divider-lg
+  .clearfix
+    = image_tag("https://www.smashingmagazine.com/wp-content/uploads/2015/09/smashing-book-5-2-large.jpg", class: 'img-circle logo-size inlide-block pull-left')
+    .ml-70
+      %div
+        .general-message-date.hidden-xs=review.created_at.strftime("%d/%m/%Y")
+        .max-240
+          .general-message-verified= t('show.review.verified')
+          .general-message-name= review.user.email
+      .mb-15
+        .star-score{ 'data-score': review.score }
+      %p= review.title
+      %p= review.body

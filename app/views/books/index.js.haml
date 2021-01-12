@@ -1,0 +1,2 @@
+$('#books_list').append('#{j(render partial: "books/index/book", collection: @presenter.books)}');
+$('#div_next_link').html('#{j(render partial: "books/index/next_link", locals: { pagy: @pagy })}');

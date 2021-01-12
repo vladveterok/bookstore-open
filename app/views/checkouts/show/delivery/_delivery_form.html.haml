@@ -1,0 +1,11 @@
+%tr
+  %td
+    .form-group.radio.mt-0.mb-0
+      %label.radio-label
+        = radio_button_tag 'cart[delivery_method_id]', delivery_form.id, @cart.delivery_method == delivery_form, class: 'radio-input', hidden: true
+        %span.radio-icon
+        %span.radio-text= delivery_form.name
+  %td
+    %span= t('checkout.delivery.time', days_min: delivery_form.days_min, days_max: delivery_form.days_max)
+  %td
+    %span.font-16.in-gold-500= number_to_currency(delivery_form.price)

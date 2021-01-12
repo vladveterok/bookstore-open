@@ -1,0 +1,16 @@
+%main.container
+  .row
+    .col-md-5.mb-40
+      .text-center
+        %h3.general-subtitle= t('checkout.login.returning_customer')
+        = link_to user_facebook_omniauth_authorize_path, class: 'general-login-icon' do
+          %i.fab.fa-facebook-square
+        %p.general-login-text= t('session.or')
+      = render partial: 'checkouts/show/login/login_form'
+    .col-md-5.col-md-offset-1.mb-60
+      .text-center
+        %h3.general-subtitle= t('checkout.login.new_customer')
+        = link_to user_facebook_omniauth_authorize_path, class: 'general-login-icon' do
+          %i.fab.fa-facebook-square
+        %p.general-login-text= t('session.or')
+      = render partial: 'checkouts/show/login/registration_form', locals: { resource: User.new }

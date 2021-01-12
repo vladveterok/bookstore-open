@@ -1,0 +1,20 @@
+.general-cart-item.divider-lg.mb-55
+  .general-img-wrap-table
+    = image_tag BookDecorator.decorate(mobile_item.book).title_image.url(:catalog), alt: 'design-book', class: 'cart-img-shadow'
+  %p.title= mobile_item.book.title
+  %table.table
+    %tr
+      %td
+        %span.in-grey-600= t('checkout.confirmation.price')
+      %td
+        %span.font-16.in-gold-500= number_to_currency(mobile_item.book.price)
+    %tr
+      %td.vertical-middle
+        %span.in-grey-600= t('checkout.confirmation.quantity')
+      %td
+        = mobile_item.quantity
+    %tr
+      %td
+        %span.in-grey-600= t('checkout.confirmation.subtotal')
+      %td
+        %span.font-16.in-gold-500= number_to_currency(mobile_item.subtotal)

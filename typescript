@@ -1,0 +1,24 @@
+Script started on Thu Oct 29 21:44:23 2020
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]2;Berezhok@MacBook-Air-Vladislav-2:~/wkspaces/rubygarage/homeworks/bookstore/bookstore]1;..ore/bookstore[0m[27m[24m[J[39m[0m[49m[40m[39m Berezhok [44m[30m[30m ~/wkspaces/rubygarage/homeworks/bookstore/bookstore [43m[34m[30m  feature-step-06-tests ± [49m[33m[39m [K[?1h=[?2004hnnode[?1l>[?2004l
+]2;node]1;nodeWelcome to Node.js v12.14.0.
+Type ".help" for more information.
+[1G[0J> [3Gvar one = 1
+[90mundefined[39m
+[1G[0J> [3Gone
+[33m1[39m
+[1G[0J> [3Gone.val()
+Thrown:
+TypeError: one.val is not a function
+[1G[0J> [3G[1G[0J> one.val()[12G[1G[0J> [3G$()[1D[1G[0J> $(o)[6G[1G[0J> $(on)[7G[1G[0J> $(one)[8G[1C.val
+Thrown:
+ReferenceError: $ is not defined
+[1G[0J> [3G[1G[0J> $(one).val[13G[1G[0J> one.val()[12G[1G[0J> one.val([11G[1G[0J> one.val[10G
+[90mundefined[39m
+[1G[0J> [3G
+[1G[0J> [3Gone
+[33m1[39m
+[1G[0J> [3Gexit
+Thrown:
+ReferenceError: exit is not defined
+[1G[0J> [3G
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]2;Berezhok@MacBook-Air-Vladislav-2:~/wkspaces/rubygarage/homeworks/bookstore/bookstore]1;..ore/bookstore[0m[27m[24m[J[39m[0m[49m[40m[39m Berezhok [44m[30m[30m ~/wkspaces/rubygarage/homeworks/bookstore/bookstore [43m[34m[30m  feature-step-06-tests ± [49m[33m[39m [K[?1h=[?2004h

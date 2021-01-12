@@ -1,0 +1,10 @@
+.col-sm-12
+  %p.in-gold-500.font-18.mb-25= t('session.edit.address.remove_acc')
+  .general-settings-btn
+    = link_to t('session.edit.address.remove_acc_btn'), registration_path(resource_name), method: :delete, id: 'remove-button', class: 'btn disabled mb-20'
+  .form-group.checkbox.general-settings-checkbox
+    %label.checkbox-label
+      %input.checkbox-input#remove-account{type: "checkbox", hidden: "true"}
+      %span.checkbox-icon
+        %i.fa.fa-check
+      %span.checkbox-text= t('session.edit.address.remove_confirm')

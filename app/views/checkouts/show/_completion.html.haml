@@ -1,0 +1,33 @@
+.text-center.mb-40
+  %h3.general-subtitle= t('checkout.completion.thanks')
+  %p.fw-300= t('checkout.completion.confirmation', email: cart.user.email)
+.row.mb-20
+  .col-sm-6
+    .visible-xs
+      %p.general-order-number.mb-0= t('checkout.completion.order', number: cart.order_number )
+      %p.general-address.mb-30= cart.order_date
+    = render partial: 'checkouts/show/confirmation/address', locals: { address: cart.user.billing_address, cart: cart }
+  .col-sm-6.hidden-xs.text-right
+    %p.general-order-number.mb-0= t('checkout.completion.order', number: cart.order_number )
+    %p.general-address.mb-30= cart.order_date
+.visible-xs
+  = render partial: 'checkouts/show/confirmation/mobile_item', collection: LineItemDecorator.decorate(cart.line_items.with_book)
+.hidden-xs.divider-lg.pt-20
+  %table.table.table-hover
+    %thead
+      %tr
+        %th
+          %span.in-grey-600= t('checkout.confirmation.book')
+        %th.col-method
+        %th
+          %span.in-grey-600= t('checkout.confirmation.price')
+        %th
+          %span.in-grey-600= t('checkout.confirmation.quantity')
+        %th
+          %span.in-grey-600= t('checkout.confirmation.total')
+    %tbody
+      = render partial: 'checkouts/show/confirmation/item', collection: LineItemDecorator.decorate(cart.line_items.with_book)
+.text-center.general-text-right
+  = render partial: 'checkouts/show/order_summary', locals: { cart: cart }
+.text-center
+  = link_to t('checkout.completion.back_to_store'), books_path, class: 'btn btn-default mb-20'

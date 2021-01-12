@@ -1,0 +1,15 @@
+.col-xs-6.col-sm-3#book
+  .general-thumb-wrap
+    .thumbnail.general-thumbnail
+      = image_tag(book.title_image.url(:catalog), class: 'img-shadow general-thumbnail-img')
+      .thumb-hover
+        .general-thumb-link-wrap
+          = link_to book_path(book.id), class: 'thumb-hover-link' do
+            %i.fa.fa-eye.thumb-icon{'aria-hidden': "true"}
+          = link_to cart_path(cart: { book_id: book.id, quantity: Constants::BOOKS_QUANTITY }), method: :put, class: 'thumb-hover-link' do
+            %i.fa.fa-shopping-cart.thumb-icon
+  .general-thumb-info
+    %p.title= book.title
+    %p.font-16.in-gold-500= number_to_currency(book.price)
+    %span.divider-sm
+    %p.lead.small= book.all_authors

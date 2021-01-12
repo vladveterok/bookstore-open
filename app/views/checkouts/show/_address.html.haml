@@ -1,0 +1,30 @@
+= simple_form_for(cart, url: checkout_path, method: :put, validate: true, html: { class: 'res-mb-100' }) do |f|
+  .hidden-xs.hidden-sm
+    .row
+      .col-md-5
+        %h3.general-subtitle= t('checkout.BillingAddress')
+        %p.general-info-text= t('checkout.all_fields')
+      .col-md-5.col-md-offset-1
+        %h3.general-subtitle= t('checkout.ShippingAddress')
+  .row
+    .col-md-5.mb-40
+      .visible-xs.visible-sm
+        %h3.general-subtitle= t('checkout.BillingAddress')
+        %p.general-info-text= t('checkout.all_fields')
+      = f.simple_fields_for(:billing_address, current_user.billing_address, validate: true) do |fa|
+        = render partial: 'addresses/address_fields', locals: { f: fa, type: 'BillingAddress' }
+    .col-md-5.col-md-offset-1.mb-60
+      #shipping_address_form
+        .visible-xs.visible-sm
+          %h3.general-subtitle= t('checkout.ShippingAddress')
+        = f.simple_fields_for(:shipping_address, current_user.shipping_address, validate: true) do |fa|
+          = render partial: 'addresses/address_fields', locals: { f: fa, type: 'ShippingAddress' }
+      .form-group.checkbox
+        %label.checkbox-label
+          = check_box_tag 'cart[use_billing]', "1", false, class: 'checkbox-input', hidden: 'true'
+          %span.checkbox-icon
+            %i.fa.fa-check
+          %span.checkbox-text= t('checkout.use_billing')
+  .general-text-align.mb-60
+    = render partial: 'checkouts/show/order_summary', locals: { cart: cart }
+  = f.button :submit, t('checkout.save_continue'), class: 'btn center-block mb-20'

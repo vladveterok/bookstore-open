@@ -1,0 +1,9 @@
+%main.container
+  %h1.general-title-margin= t('catalog.header')
+  = render partial: 'books/index/filter_sorter', locals: { presenter: @presenter, categories: @categories }
+  = render partial: 'books/index/filter_sorter_mobile', locals: { presenter: @presenter, categories: @categories }
+  .mb-120
+    .row#books_list
+      = render partial: 'books/index/book', collection: @presenter.books
+    #div_next_link.text-center
+      = render partial: 'books/index/next_link', locals: { pagy: @pagy }

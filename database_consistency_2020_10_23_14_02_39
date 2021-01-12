@@ -1,0 +1,28 @@
+<===begin===>
+[1mTraceback[m (most recent call last):
+	24: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/bin/ruby_executable_hooks:24:in `<main>'
+	23: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/bin/ruby_executable_hooks:24:in `eval'
+	22: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/bin/database_consistency:23:in `<main>'
+	21: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/bin/database_consistency:23:in `load'
+	20: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/bin/database_consistency:44:in `<top (required)>'
+	19: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency.rb:47:in `run'
+	18: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/base_processor.rb:12:in `reports'
+	17: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/base_processor.rb:12:in `flat_map'
+	16: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/base_processor.rb:12:in `each'
+	15: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/base_processor.rb:13:in `block in reports'
+	14: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/base_processor.rb:28:in `reports'
+	13: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:15:in `check'
+	12: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:15:in `flat_map'
+	11: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:15:in `each'
+	10: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:18:in `block in check'
+	 9: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:18:in `flat_map'
+	 8: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:18:in `each'
+	 7: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:19:in `block (2 levels) in check'
+	 6: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:19:in `map'
+	 5: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/processors/associations_processor.rb:21:in `block (3 levels) in check'
+	 4: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/checkers/base_checker.rb:34:in `report_if_enabled?'
+	 3: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/checkers/base_checker.rb:25:in `report'
+	 2: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/checkers/association_checkers/foreign_key_type_checker.rb:40:in `check'
+	 1: from /Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/checkers/association_checkers/foreign_key_type_checker.rb:80:in `base_column'
+/Users/Berezhok/.rvm/gems/ruby-2.7.1@bookstore/gems/database_consistency-0.8.8/lib/database_consistency/checkers/association_checkers/foreign_key_type_checker.rb:99:in `column': [1mAssociation (category) of class (Book) relies on field (category_id) of table (books) but it is missing. ([1;4mDatabaseConsistency::Errors::MissingField[m[1m)[m
+<===end===>

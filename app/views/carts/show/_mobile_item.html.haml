@@ -1,0 +1,28 @@
+.general-cart-item.divider-lg-bottom
+  %button.close.general-cart-close{type: "button", 'aria-label': "Close"}
+    %span{'aria-hidden': "true"} &times;
+  .general-img-wrap-table
+    = link_to book_path(mobile_item.book_item) do
+      = image_tag(mobile_item.book_item.title_image.url(:preview), alt: 'design-book', class: 'cart-img-shadow')
+  %p.title= mobile_item.book_item.title
+  %table.table
+    %tr
+      %td
+        %span.in-grey-600= t('cart.headers.price')
+      %td
+        %span.font-16.in-gold-500= number_to_currency(mobile_item.book_item.price)
+    %tr
+      %td.vertical-middle
+        %span.in-grey-600= t('cart.headers.quantity')
+      %td
+        .input-group
+          = link_to cart_path(cart: { book_id: mobile_item.book.id, quantity: -1 }), remote: true, method: :put, class: 'b-n input-link minus' do
+            %i.fa.fa-minus.line-height-40
+          = text_field_tag "books-count", "", class: 'form-control quantity-input input-count-book', value: mobile_item.quantity
+          = link_to cart_path(cart: { book_id: mobile_item.book.id, quantity: 1 }), remote: true, method: :put, class: 'b-n input-link plus' do
+            %i.fa.fa-plus.line-height-40
+    %tr
+      %td
+        %span.in-grey-600= t('cart.headers.subtotal')
+      %td
+        %span.font-16.in-gold-500= number_to_currency(mobile_item.subtotal)

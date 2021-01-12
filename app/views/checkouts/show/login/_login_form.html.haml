@@ -1,0 +1,7 @@
+.login
+  %p.mb-15= t('checkout.login.with_password')
+  = simple_form_for(:user, url: checkout_sign_in_path, method: :post) do |f|
+    = f.input :email
+    = f.input :password, hint: link_to(t('session.forgot_pass'), new_user_password_path, class: 'in-gold-500')
+    .text-center
+      = f.button :submit

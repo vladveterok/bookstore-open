@@ -1,0 +1,25 @@
+%main.container#latest_books
+  #slider.carousel.slide{'data-ride': "carousel"}
+    %ol.carousel-indicators
+      - latest_books.length.times do |number|
+        %li{class: "#{'active' if number == 0}", 'data-target': "#slider", 'data-slide-to': "#{number}"}
+    .carousel-inner{role: "listbox"}
+      - latest_books.each_with_index do |book, index|
+        .item{class: "#{'active' if index == 0}"}
+          .row
+            .col-sm-5
+              .general-img-wrap
+                = image_tag(book.title_image.url(:latest_books), class: 'img-shadow general-thumbnail-img', alt: "default_book.jpg")
+            .col-sm-7
+              .mb-60
+                %h1= book.title
+                %p.lead= sanitize book.full_description
+                %p.lead.small= book.all_authors
+                .general-align
+                  = link_to t('home_slider.buy_now_btn'), cart_path(cart: { book_id: book.id, quantity: 1 }), method: :put, class: 'btn btn-primary'
+    %a.left.carousel-control{href: "#slider", role: "button", 'data-slide': "prev"}
+      %span.icon-prev{'aria-hidden': "true"}
+      %span.sr-only= t('home_slider.previous')
+    %a.right.carousel-control{href: "#slider", role: "button", 'data-slide': "next"}
+      %span.icon-next{'aria-hidden': "true"}
+      %span.sr-only= t('home_slider.next')

@@ -1,0 +1,7 @@
+%p= t('show.description.header')
+%span#short_text
+  = sanitize short_description
+- if description.length > BookDecorator::SHORT_DESCRIPTION_MAX_LENGTH
+  %span#more_text
+    = sanitize description
+  %a.b-n.in-gold-500.ml-10#btn_read_more= t('show.description.more')

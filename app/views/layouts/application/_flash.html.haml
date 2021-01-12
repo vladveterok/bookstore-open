@@ -1,0 +1,4 @@
+-flash.each do |name, msg|
+  .mt-60
+    - name == 'alert' ? name = 'warning' : name = 'success'
+    = content_tag(:div, msg, class: "alert alert-#{name}")
